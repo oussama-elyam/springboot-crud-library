@@ -1,19 +1,17 @@
 package org.yam.springbootlibrarycrud.service.impl;
 
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.yam.springbootlibrarycrud.common.exception.ResourceConflictException;
 import org.yam.springbootlibrarycrud.model.Actor;
 import org.yam.springbootlibrarycrud.repository.ActorRepository;
 import org.yam.springbootlibrarycrud.service.ActorService;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +24,9 @@ public class ActorServiceImpl implements ActorService {
     @Override
     public Actor createActor(Actor body) {
         if (actorRepository.existsByMail(body.getMail())) {
-            throw new ResourceConflictException("Actor mail must be unique. The mail '" + body.getMail() + "' already exists.");
+            throw new ResourceConflictException(
+                    "Actor mail must be unique. The mail '" + body.getMail() + "' already exists."
+            );
         }
 
         Actor newActor = Actor.builder()
@@ -44,26 +44,22 @@ public class ActorServiceImpl implements ActorService {
         return actorRepository.findAll(pageable);
     }
 
-    @Override
     @Transactional
+    @Override
     public Actor updateActor(Actor body, Long id) {
 
-        Actor existingActor = actorRepository.findById(id).orElse(null);
-        if (existingActor == null) {
-            throw new EntityNotFoundException("Actor with ID " + id + " not found");
-        }
+        Actor existingActor = actorRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Actor with ID " + id + " not found"));
 
         modelMapper.map(body, existingActor);
-
-        return actorRepository.save(existingActor);
+        return existingActor; // no need to call save(), entity is managed
     }
 
+    @Transactional
     @Override
     public void deleteActor(Long id) {
-        Optional<Actor> existingActor = actorRepository.findById(id);
-        if (existingActor.isEmpty()) {
-            throw new EntityNotFoundException("Actor with ID " + id + " not found");
-        }
-        actorRepository.deleteById(id);
+        Actor existingActor = actorRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Actor with ID " + id + " not found"));
+        actorRepository.delete(existingActor);
     }
 }
