@@ -1,7 +1,7 @@
 package org.yam.springbootlibrarycrud.dto;
 
 import lombok.Data;
-import org.yam.springbootlibrarycrud.model.ActorRole;
+import org.yam.springbootlibrarycrud.model.enums.ActorRole;
 
 @Data
 public class ActorDto {

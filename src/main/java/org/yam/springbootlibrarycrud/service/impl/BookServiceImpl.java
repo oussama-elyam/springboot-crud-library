@@ -13,7 +13,7 @@ import org.yam.springbootlibrarycrud.common.exception.ResourceConflictException;
 import org.yam.springbootlibrarycrud.dto.BookDto;
 import org.yam.springbootlibrarycrud.mapper.BookMapper;
 import org.yam.springbootlibrarycrud.model.Book;
-import org.yam.springbootlibrarycrud.model.StatusBook;
+import org.yam.springbootlibrarycrud.model.enums.StatusBook;
 import org.yam.springbootlibrarycrud.repository.BookRepository;
 import org.yam.springbootlibrarycrud.service.BookService;
 
@@ -76,7 +76,7 @@ public class BookServiceImpl implements BookService {
         bookRepository.delete(existingBook);
     }
 
-    private StatusBook resolveStatus(Long qte) {
+    private StatusBook resolveStatus(Integer qte) {
         return qte > 0 ? StatusBook.AVAILABLE : StatusBook.NOTAVAILABLE;
     }
 }

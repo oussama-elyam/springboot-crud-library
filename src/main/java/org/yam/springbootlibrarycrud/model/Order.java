@@ -2,19 +2,25 @@ package org.yam.springbootlibrarycrud.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "app-order") // Change table name to avoid conflicts@Data
+@Table(name = "app_order")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String priceTotal;
-    private String qteTotal;
-    //1to* OrderItem liste
-    // many to 1 user
+    private String orderName;
+    private Long priceTotal;
+    private Integer qteTotal;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "book_id", nullable = false)
+    private Book book;
 
 }

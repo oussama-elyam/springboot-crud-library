@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.yam.springbootlibrarycrud.model.enums.ActorRole;
 
 @Entity
 @Table(name = "Actor")
@@ -19,7 +20,7 @@ public class Actor {
     private String mail;
     private String password;
     @Enumerated(EnumType.STRING)
-    private org.yam.springbootlibrarycrud.model.ActorRole actorRole;
+    private ActorRole actorRole;
     //1 to many order
 
 }

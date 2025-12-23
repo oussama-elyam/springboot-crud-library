@@ -2,6 +2,7 @@ package org.yam.springbootlibrarycrud.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.yam.springbootlibrarycrud.model.enums.StatusBook;
 
 @Entity(name = "Book")
 @Data
@@ -13,10 +14,9 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String price;
-    private Long qte;
+    private Long price;
+    private Integer qte;
     @Enumerated(EnumType.STRING)
     private StatusBook statusBook;
-    //1to* OrderItem liste
 
 }
