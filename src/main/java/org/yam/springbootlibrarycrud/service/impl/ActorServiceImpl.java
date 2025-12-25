@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.yam.springbootlibrarycrud.common.exception.ResourceConflictException;
-import org.yam.springbootlibrarycrud.model.Actor;
+import org.yam.springbootlibrarycrud.entitie.Actor;
 import org.yam.springbootlibrarycrud.repository.ActorRepository;
 import org.yam.springbootlibrarycrud.service.ActorService;
 

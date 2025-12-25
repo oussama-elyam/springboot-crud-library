@@ -1,11 +1,11 @@
-package org.yam.springbootlibrarycrud.model;
+package org.yam.springbootlibrarycrud.entitie;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.yam.springbootlibrarycrud.model.enums.ActorRole;
+import org.yam.springbootlibrarycrud.entitie.enums.ActorRole;
 
 @Entity
 @Table(name = "Actor")

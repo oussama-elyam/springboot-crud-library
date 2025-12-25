@@ -35,11 +35,11 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(Orders.getContent());
     }
 
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<String> deleteTask(@PathVariable("id") Long id) {
-//        orderService.deleteOrder(id);
-//        return ResponseEntity.status(HttpStatus.OK).body("Order deleted successfully");
-//    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteTask(@PathVariable("id") Long id) {
+        orderService.deleteOrder(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Order deleted successfully");
+    }
 //
 //    @PutMapping("/{id}")
 //    public ResponseEntity<OrderDtoRequest> updateOrder(@RequestBody OrderDtoRequest body, @PathVariable("id") Long id) {

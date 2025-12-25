@@ -13,10 +13,10 @@ import org.yam.springbootlibrarycrud.dto.OrderDtoRequest;
 import org.yam.springbootlibrarycrud.dto.OrderDtoResponse;
 import org.yam.springbootlibrarycrud.dto.OrderItemDtoRequest;
 import org.yam.springbootlibrarycrud.mapper.OrderMapper;
-import org.yam.springbootlibrarycrud.model.Book;
-import org.yam.springbootlibrarycrud.model.Order;
-import org.yam.springbootlibrarycrud.model.OrderItem;
-import org.yam.springbootlibrarycrud.model.enums.StatusBook;
+import org.yam.springbootlibrarycrud.entitie.Book;
+import org.yam.springbootlibrarycrud.entitie.Order;
+import org.yam.springbootlibrarycrud.entitie.OrderItem;
+import org.yam.springbootlibrarycrud.entitie.enums.StatusBook;
 import org.yam.springbootlibrarycrud.repository.BookRepository;
 import org.yam.springbootlibrarycrud.repository.OrderRepository;
 import org.yam.springbootlibrarycrud.service.OrderService;
@@ -116,17 +116,17 @@ public class OrderServiceImpl implements OrderService {
 //        return orderMapper.toResponseDto(existingOrder); // no explicit save() needed, managed entity
 //    }
 //
-//    @Transactional
-//    @Override
-//    public void deleteOrder(Long id) {
-//
-//        Order existingOrder = orderRepository.findById(id)
-//                .orElseThrow(() ->
-//                        new EntityNotFoundException("Order with ID " + id + " not found")
-//                );
-//
-//        orderRepository.delete(existingOrder);
-//    }
+    @Transactional
+    @Override
+    public void deleteOrder(Long id) {
+
+        Order existingOrder = orderRepository.findById(id)
+                .orElseThrow(() ->
+                        new EntityNotFoundException("Order with ID " + id + " not found")
+                );
+
+        orderRepository.delete(existingOrder);
+    }
 //
 //    private StatusOrder resolveStatus(Long qte) {
 //        return qte > 0 ? StatusOrder.AVAILABLE : StatusOrder.NOTAVAILABLE;

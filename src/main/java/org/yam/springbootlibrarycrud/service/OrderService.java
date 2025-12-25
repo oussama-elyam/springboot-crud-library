@@ -11,5 +11,5 @@ public interface OrderService {
 //
 //    Order updateOrder(Order body, Long id);
 //
-//    void deleteOrder(Long id);
+    void deleteOrder(Long id);
 }

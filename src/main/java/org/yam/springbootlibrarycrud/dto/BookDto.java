@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-import org.yam.springbootlibrarycrud.model.enums.StatusBook;
+import org.yam.springbootlibrarycrud.entitie.enums.StatusBook;
 
 @Data
 public class BookDto {

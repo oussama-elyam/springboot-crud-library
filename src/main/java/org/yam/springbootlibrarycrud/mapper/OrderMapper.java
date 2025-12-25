@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 import org.yam.springbootlibrarycrud.dto.BookDto;
 import org.yam.springbootlibrarycrud.dto.OrderDtoResponse;
 import org.yam.springbootlibrarycrud.dto.OrderItemDtoResponse;
-import org.yam.springbootlibrarycrud.model.Book;
-import org.yam.springbootlibrarycrud.model.Order;
+import org.yam.springbootlibrarycrud.entitie.Book;
+import org.yam.springbootlibrarycrud.entitie.Order;
 
 import java.util.List;
 

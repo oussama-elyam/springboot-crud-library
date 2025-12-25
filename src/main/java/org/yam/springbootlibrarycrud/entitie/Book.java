@@ -1,8 +1,8 @@
-package org.yam.springbootlibrarycrud.model;
+package org.yam.springbootlibrarycrud.entitie;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.yam.springbootlibrarycrud.model.enums.StatusBook;
+import org.yam.springbootlibrarycrud.entitie.enums.StatusBook;
 
 @Entity(name = "Book")
 @Data

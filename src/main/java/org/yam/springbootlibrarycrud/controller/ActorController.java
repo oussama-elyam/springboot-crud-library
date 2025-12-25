@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.yam.springbootlibrarycrud.dto.ActorDto;
-import org.yam.springbootlibrarycrud.model.Actor;
+import org.yam.springbootlibrarycrud.entitie.Actor;
 import org.yam.springbootlibrarycrud.service.ActorService;
 
 import java.util.List;

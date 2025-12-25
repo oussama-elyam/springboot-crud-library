@@ -12,8 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.yam.springbootlibrarycrud.common.exception.ResourceConflictException;
 import org.yam.springbootlibrarycrud.dto.BookDto;
 import org.yam.springbootlibrarycrud.mapper.BookMapper;
-import org.yam.springbootlibrarycrud.model.Book;
-import org.yam.springbootlibrarycrud.model.enums.StatusBook;
+import org.yam.springbootlibrarycrud.entitie.Book;
+import org.yam.springbootlibrarycrud.entitie.enums.StatusBook;
 import org.yam.springbootlibrarycrud.repository.BookRepository;
 import org.yam.springbootlibrarycrud.service.BookService;
 

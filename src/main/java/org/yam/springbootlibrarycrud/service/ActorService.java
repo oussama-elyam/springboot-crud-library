@@ -1,7 +1,7 @@
 package org.yam.springbootlibrarycrud.service;
 
 import org.springframework.data.domain.Page;
-import org.yam.springbootlibrarycrud.model.Actor;
+import org.yam.springbootlibrarycrud.entitie.Actor;
 
 public interface ActorService {
     Actor createActor(Actor body);

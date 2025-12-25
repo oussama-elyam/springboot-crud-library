@@ -1,4 +1,4 @@
-package org.yam.springbootlibrarycrud.model;
+package org.yam.springbootlibrarycrud.entitie;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

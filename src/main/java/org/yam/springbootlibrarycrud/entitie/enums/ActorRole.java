@@ -1,4 +1,4 @@
-package org.yam.springbootlibrarycrud.model.enums;
+package org.yam.springbootlibrarycrud.entitie.enums;
 
 public enum ActorRole {
     CUSTOMER,

@@ -2,7 +2,7 @@ package org.yam.springbootlibrarycrud.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
-import org.yam.springbootlibrarycrud.model.Book;
+import org.yam.springbootlibrarycrud.entitie.Book;
 import org.yam.springbootlibrarycrud.dto.BookDto;
 
 @Component
